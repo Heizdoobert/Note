@@ -44,8 +44,8 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
-    public UserResponse getUser(String userId){
-        return userMapper.toUserResponse(userRepository.findById(userId)
+    public UserResponse getUser(String email) {
+        return userMapper.toUserResponse(userRepository.findById(email)
                 .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_FOUND)));
     }
 
